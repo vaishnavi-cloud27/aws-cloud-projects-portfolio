@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Stack App</title>
+</head>
+<body>
+  <h1>Full Stack App</h1>
+
+  <h2>Test API</h2>
+  <button onclick="loadData()">Get Data</button>
+  <p id="data"></p>
+
+  <h2>Signup</h2>
+  <input type="text" id="signup-username" placeholder="Username">
+  <input type="password" id="signup-password" placeholder="Password">
+  <button onclick="signup()">Signup</button>
+  <p id="signup-msg"></p>
+
+  <h2>Login</h2>
+  <input type="text" id="login-username" placeholder="Username">
+  <input type="password" id="login-password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p id="login-msg"></p>
+
+  <script>
+    const backendUrl = "http://13.235.19.47:3000";
+
+    function loadData() {
+      fetch(`${backendUrl}/api`)
+        .then(res => res.json())
+        .then(data => document.getElementById("data").innerText = data.message);
+    }
+
+    function signup() {
+      const username = document.getElementById("signup-username").value;
+      const password = document.getElementById("signup-password").value;
+
+      fetch(`${backendUrl}/signup`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      })
+      .then(res => res.json())
+      .then(data => document.getElementById("signup-msg").innerText = data.message);
+    }
+
+    function login() {
+      const username = document.getElementById("login-username").value;
+      const password = document.getElementById("login-password").value;
+
+      fetch(`${backendUrl}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      })
+      .then(res => res.json())
+      .then(data => document.getElementById("login-msg").innerText = data.message);
+    }
+  </script>
+</body>
+</html>

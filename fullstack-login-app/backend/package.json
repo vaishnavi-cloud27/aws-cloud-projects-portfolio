@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Node.js Express backend for Full Stack Login Application",
+  "main": "service.js",
+  "scripts": {
+    "start": "node service.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
