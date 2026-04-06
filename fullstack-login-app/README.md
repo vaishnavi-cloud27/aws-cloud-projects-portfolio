@@ -105,7 +105,7 @@ docker run -d -p 3001:80 frontend-app
 ## 👩‍💻 Author
 
 **Vaishnavi Ghadge**  
-B.Tech Computer Science (Cloud Computing) — University of Mumbai  
+BSC. Computer Science (Cloud Computing) — University of Mumbai  
 🔗 [GitHub](https://github.com/vaishnavi-cloud27)
 
 ---
